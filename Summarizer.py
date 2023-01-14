@@ -15,15 +15,7 @@ window.geometry("500x125")
 
 window.columnconfigure(0,weight=1)
 
-
-#def location():
-    #folderName = fd.asksaveasfilename()
-    #if(len(folderName)>0):
-       # locationError.config(text=folderName,fg="green")
-   # else:
-       # locationError.config(text="Invalid Directory",fg="red")
-
-def downloadVid():
+def downloadText():
     
     URL = entry.get()
     
@@ -32,7 +24,6 @@ def downloadVid():
 
     article.download()
     article.parse()
-    nltk.download("punkt")
     article.nlp()
     
     fileName = fd.asksaveasfilename()
@@ -49,12 +40,8 @@ entry = Entry(window, width=50,textvariable=entry)
 entry.grid(pady=5)
 
 
-#save = Button(window, width=10,bg="purple",fg="white", text="Choose Path",command=location)
-#save.grid()
 
-
-
-download = Button(window, width=10,bg="purple",fg="white", text="Summarize",command=downloadVid)
+download = Button(window, width=10,bg="purple",fg="white", text="Summarize",command=downloadText)
 download.grid(pady=5)
 
 
